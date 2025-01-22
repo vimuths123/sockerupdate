@@ -39,7 +39,9 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
-        Game::create($request->validated());
+        $game = Game::create($request->validated());
+
+        broadcast(new GameUpdated($game));
 
         return redirect()->route('games.index')->with('success', 'Game created successfully.');
     }
