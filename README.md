@@ -2,10 +2,6 @@
 
 This project is a **real-time WebSocket-based application** that allows users to create teams and games, each involving two teams. When a game is updated, **WebSockets** ensure that all connected clients receive real-time status updates instantly. This provides a seamless and interactive experience for users without requiring manual refreshes.  
 
-Here’s the **Installation** section for your README:  
-
----
-
 ## Installation  
 
 Follow these steps to set up the project on your local machine:  
