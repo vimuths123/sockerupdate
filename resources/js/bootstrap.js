@@ -30,3 +30,21 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+
+import Echo from 'laravel-echo';
+import Pusher from 'pusher-js';
+
+window.Pusher = Pusher;
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: 'local_key', // Matches PUSHER_APP_KEY in .env
+    cluster: 'mt1', // Matches PUSHER_APP_CLUSTER in .env
+    wsHost: window.location.hostname, // Points to localhost
+    wsPort: 6001, // WebSocket port
+    wssPort: 6001, // Secure WebSocket port (if needed for HTTPS)
+    forceTLS: false, // Use false for local development
+    disableStats: true, // Disable Pusher stats
+    enabledTransports: ['ws', 'wss'], // Use WebSocket transports
+});
