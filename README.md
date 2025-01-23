@@ -31,19 +31,24 @@ Follow these steps to set up the project on your local machine:
 5. **Generate the application key**  
    ```sh
    php artisan key:generate
-   ```  
+   ```
 
 6. **Run migrations and seed the database**  
    ```sh
    php artisan migrate --seed
-   ```  
+   ```
+   
+7. **Generate storage symlinks**  
+   ```sh
+   php artisan storage:link
+   ```
 
-7. **Start the WebSocket server**  
+8. **Start the WebSocket server**  
    ```sh
    php artisan websockets:serve
    ```  
 
-8. **Run the application**  
+9. **Run the application**  
    ```sh
    php artisan serve
    npm run dev
